@@ -11,14 +11,14 @@ git clone https://github.com/mozilla/fxa-local-dev.git && cd fxa-local-dev && np
 
 After installation completes visit [127.0.0.1:3030](http://127.0.0.1:3030/). Use the [PM2 tool](https://github.com/Unitech/PM2#main-features) to start, stop and read server logs.  Most common commands are as follows:
 
-- `./pm2 start servers.json` **- start all servers.** 
+- `pm2 start servers.json` **- start all servers.**
 - ^ (WARNING: running the above command multiple times will spawn more of the same servers).
-- `./pm2 kill` **- stop all servers.**
-- `./pm2 status` - display running servers. 
-- `./pm2 logs` - logs for all servers (note: this must be used to verify accounts).
-- `./pm2 logs 1` - display logs for process `1`.
-- `./pm2 stop 1` - stop process `1`.
-- `./pm2 restart 1` - restart process `1`.
+- `pm2 kill` **- stop all servers.**
+- `pm2 status` - display running servers.
+- `pm2 logs` - logs for all servers (note: this must be used to verify accounts).
+- `pm2 logs 1` - display logs for process `1`.
+- `pm2 stop 1` - stop process `1`.
+- `pm2 restart 1` - restart process `1`.
 - More commands on the [PM2 Readme](https://github.com/Unitech/PM2#main-features).
 
 **Use `npm run update` to [fetch the latest changes](_scripts/update_all.sh) to servers**
@@ -48,14 +48,14 @@ Available options:
 ### Workflow
 > This is an example workflow for **fxa-local-dev**.
 
-After installing **fxa-local-dev** the servers should automatically start up. Use `./pm2 status` command to check the status of the servers: 
+After installing **fxa-local-dev** the servers should automatically start up. Use `pm2 status` command to check the status of the servers:
 
 ![](http://i.imgur.com/eqL8FiZ.png)
 
-To avoid wasting computer resources while not working on FxA make sure to stop the servers using `./pm2 kill`.
-Once you are back working on FxA just use the `./pm2 start servers.json` command to bring the servers back up. Keep in mind that the memory store will restart and all your database data will be brand new.
+To avoid wasting computer resources while not working on FxA make sure to stop the servers using `pm2 kill`.
+Once you are back working on FxA just use the `pm2 start servers.json` command to bring the servers back up. Keep in mind that the memory store will restart and all your database data will be brand new.
 
-Use the `./pm2 logs` command to get the logs of all servers. You may also use `./pm2 logs [id]` to just see the logs for that particular server. When you signup for an account via `localhost:3030/signup` the `auth-server` logs will print out the verification link that you need to copy paste into your browser to verify your account:
+Use the `pm2 logs` command to get the logs of all servers. You may also use `pm2 logs [id]` to just see the logs for that particular server. When you signup for an account via `localhost:3030/signup` the `auth-server` logs will print out the verification link that you need to copy paste into your browser to verify your account:
 
 ![](http://i.imgur.com/oGYXSPl.png)
 
@@ -64,13 +64,13 @@ If you get an `error` status for any of the servers please verify that you insta
 *******
 
 ### Dependencies
-> Required dependencies: 
-[Git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git), 
-[node.js **0.10** with npm 2.4+](http://nodejs.org/), 
-[Python 2.6+](https://www.python.org/), 
-[Redis](http://redis.io/), 
-[libgmp](https://gmplib.org/),
-[graphicsmagick](http://www.graphicsmagick.org/).
+* [Git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* [node.js **0.10** with npm 2.4+](http://nodejs.org/)
+* [pm2](https://github.com/Unitech/PM2) ```npm install -g pm2```
+* [Python 2.6+](https://www.python.org/)
+* [Redis](http://redis.io/)
+* [libgmp](https://gmplib.org/)
+* [graphicsmagick](http://www.graphicsmagick.org/)
 
 ##### OS X (with [Brew](http://brew.sh/)): 
 ```

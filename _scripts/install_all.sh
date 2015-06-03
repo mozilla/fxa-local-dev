@@ -39,4 +39,3 @@ cd loop-server && npm i && cd ..
 
 cd syncserver && make build && cd ..
 
-ln -s node_modules/.bin/pm2 pm2
