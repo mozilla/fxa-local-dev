@@ -22,7 +22,7 @@ before_install:
   - sudo apt-get install graphicsmagick
   - sudo apt-get install python-virtualenv
   - sudo apt-get install libgmp3-dev || brew install gmp
-  - npm install -g npm@2.4
+  - npm install -g npm@3
   - node --version
   - npm --version
   - npm config set spin false
