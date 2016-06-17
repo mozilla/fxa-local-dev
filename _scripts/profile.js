@@ -5,7 +5,7 @@ var CONFIGS = {
   'local': {
     auth: 'http://fxadeploybox.dev.lcip.org:9000',
     content: 'http://127.0.0.1:3030/',
-    token: 'http://localhost:5000/token/1.0/sync/1.5',
+    token: 'http://fxadeploybox.dev.lcip.org:5000/token/1.0/sync/1.5',
     loop: 'http://localhost:10222',
     oauth: 'http://fxadeploybox.dev.lcip.org:9010/v1',
     profile: 'http://fxadeploybox.dev.lcip.org:1111/v1'
