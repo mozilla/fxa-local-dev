@@ -3,12 +3,12 @@ var chalk = require('chalk');
 
 var CONFIGS = {
   'local': {
-    auth: 'http://127.0.0.1:9000/v1',
+    auth: 'http://fxadeploybox.dev.lcip.org:9000',
     content: 'http://127.0.0.1:3030/',
     token: 'http://localhost:5000/token/1.0/sync/1.5',
     loop: 'http://localhost:10222',
-    oauth: 'http://127.0.0.1:9010/v1',
-    profile: 'http://localhost:1111/v1'
+    oauth: 'http://fxadeploybox.dev.lcip.org:9010/v1',
+    profile: 'http://fxadeploybox.dev.lcip.org:1111/v1'
   },
   'latest': {
     auth: 'https://latest.dev.lcip.org/auth/v1',
