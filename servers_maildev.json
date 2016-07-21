@@ -1,16 +1,6 @@
 {
   "apps": [
     {
-      "name": "auth-server local mail helper",
-      "script": "test/mail_helper.js",
-      "cwd": "fxa-auth-server",
-      "env": {
-        "NODE_ENV": "dev"
-      },
-      "max_restarts": "1",
-      "min_uptime": "2m"
-    },
-    {
       "name": "auth-server db memory",
       "script": "node_modules/fxa-auth-db-mysql/bin/mem.js",
       "cwd": "fxa-auth-server",
