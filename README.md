@@ -17,7 +17,7 @@
    cd fxa-local-dev
    npm install
    npm run start-remote
-this will start a remote server on local computer
+(this will start a remote server on local computer)
    ```
 
 4. Visit [127.0.0.1:3030](http://127.0.0.1:3030/).
