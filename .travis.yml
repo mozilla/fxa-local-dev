@@ -31,6 +31,7 @@ matrix:
 
 before_install:
   - if [[ $TRAVIS_OS_NAME == "osx" ]]; then brew install graphicsmagick; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ] && [ "$CC" = "gcc" ]; then export CC=gcc-4.8; fi
 
 install:
   - PATH="`npm bin`:`npm bin -g`:$PATH"
