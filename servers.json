@@ -167,6 +167,10 @@
       "script": "_scripts/memcached.js",
       "max_restarts": "1",
       "min_uptime": "2m"
+    },
+    {
+      "name": "goaws",
+      "script": "_scripts/goaws.sh",
     }
   ]
 }

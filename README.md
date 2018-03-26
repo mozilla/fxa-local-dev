@@ -83,7 +83,8 @@ If you get an `error` status for any of the servers please verify that you insta
 [Redis](http://redis.io/),
 [libgmp](https://gmplib.org/),
 [graphicsmagick](http://www.graphicsmagick.org/),
-[memcached](https://memcached.org/).
+[memcached](https://memcached.org/),
+[docker](https://docs.docker.com/).
 
 **Note:** Node.js 8 is not currently supported. Please use Node.js 6+.
 
@@ -98,12 +99,17 @@ then:
 brew install gmp redis graphicsmagick memcached
 sudo easy_install pip && sudo pip install virtualenv
 ```
+[Install Docker for Mac](https://docs.docker.com/docker-for-mac/install/)
 
 ##### Ubuntu:
 ```
-sudo apt-get install build-essential git-core libgmp3-dev graphicsmagick redis-server python-virtualenv python-dev memcached
+sudo apt-get install build-essential git-core libgmp3-dev graphicsmagick redis-server python-virtualenv
+python-dev memcached docker-ce
 ```
-
+#### Pull GoAws image for local SQS / SNS fake server
+```
+docker pull pafortin/goaws
+```
 #### Installing Node.js
 
 > NOTE: If you are experienced with Node.js: Use [nvm](https://github.com/creationix/nvm) to force node 6
