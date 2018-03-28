@@ -106,10 +106,7 @@ sudo easy_install pip && sudo pip install virtualenv
 sudo apt-get install build-essential git-core libgmp3-dev graphicsmagick redis-server python-virtualenv
 python-dev memcached docker-ce
 ```
-#### Pull GoAws image for local SQS / SNS fake server
-```
-docker pull pafortin/goaws
-```
+
 #### Installing Node.js
 
 > NOTE: If you are experienced with Node.js: Use [nvm](https://github.com/creationix/nvm) to force node 6
