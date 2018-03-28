@@ -7,7 +7,12 @@ else
   is_up=$(docker ps -a | grep pafortin/goaws | grep Up | cut -d' ' -f1)
   if [ -z "$is_up" ]; then
     docker start $container_id
-  else
-    echo $container_id
+    echo "starting $container_id"
   fi
 fi
+
+function finish {
+  echo "stopping $container_id"
+  docker stop $container_id
+}
+trap finish EXIT
