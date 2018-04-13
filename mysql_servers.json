@@ -1,0 +1,192 @@
+{
+  "apps": [
+    {
+      "name": "Mysql server PORT 3306",
+      "script": "_scripts/mysql.sh",
+      "max_restarts": "1",
+      "min_uptime": "2m"
+    },
+    {
+      "name": "auth-server db mysql PORT 8000",
+      "script": "_scripts/auth_mysql.js",
+      "cwd": "fxa-auth-db-mysql",
+      "env": {
+        "NODE_ENV": "dev"
+      },
+      "max_restarts": "1",
+      "min_uptime": "2m"
+    },
+    {
+      "name": "auth-server local mail helper",
+      "script": "test/mail_helper.js",
+      "cwd": "fxa-auth-server",
+      "env": {
+        "NODE_ENV": "dev"
+      },
+      "max_restarts": "1",
+      "min_uptime": "2m"
+    },
+    {
+      "name": "auth-server key server PORT 9000",
+      "script": "bin/key_server.js",
+      "cwd": "fxa-auth-server",
+      "env": {
+        "NODE_ENV": "dev",
+        "IP_ADDRESS": "0.0.0.0",
+        "SIGNIN_UNBLOCK_FORCED_EMAILS": "^block.*@restmail\\.net$",
+        "SIGNIN_CONFIRMATION_ENABLED": "true",
+        "SIGNIN_CONFIRMATION_FORCE_EMAIL_REGEX": "^sync.*@restmail\\.net$"
+      },
+      "max_restarts": "1",
+      "min_uptime": "2m"
+    },
+    {
+      "name": "content-server PORT 3030",
+      "script": "node_modules/.bin/grunt",
+      "args": [
+        "server"
+      ],
+      "cwd": "fxa-content-server",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "max_restarts": "1",
+      "min_uptime": "2m"
+    },
+    {
+      "name": "fxa-basket-proxy PORT 1114",
+      "script": "./bin/basket-proxy-server.js",
+      "cwd": "fxa-basket-proxy",
+      "max_restarts": "1",
+      "min_uptime": "2m"
+    },
+    {
+      "name": "fxa-basket-proxy fake basket server PORT 10140",
+      "script": "./bin/fake-basket-server.js",
+      "cwd": "fxa-basket-proxy",
+      "max_restarts": "1",
+      "min_uptime": "2m"
+    },
+    {
+      "name": "oauth-server PORT 9010",
+      "script": "bin/server.js",
+      "cwd": "fxa-oauth-server",
+      "env": {
+        "NODE_ENV": "dev",
+        "HOST": "0.0.0.0",
+        "DB": "mysql"
+      },
+      "max_restarts": "1",
+      "min_uptime": "2m"
+    },
+    {
+      "name": "oauth-server-internal PORT 9011",
+      "script": "bin/internal.js",
+      "cwd": "fxa-oauth-server",
+      "env": {
+        "NODE_ENV": "dev",
+        "HOST_INTERNAL": "0.0.0.0",
+        "DB": "mysql"
+      },
+      "max_restarts": "1",
+      "min_uptime": "2m"
+    },
+    {
+      "name": "profile-server PORT 1111",
+      "script": "bin/server.js",
+      "cwd": "fxa-profile-server",
+      "max_restarts": "1",
+      "env": {
+        "NODE_ENV": "development",
+        "HOST": "0.0.0.0",
+        "DB": "mysql"
+      },
+      "min_uptime": "2m"
+    },
+    {
+      "name": "profile-server static dev PORT 1112",
+      "script": "bin/_static.js",
+      "cwd": "fxa-profile-server",
+      "max_restarts": "1",
+      "env": {
+        "NODE_ENV": "development",
+        "DB": "mysql"
+      },
+      "min_uptime": "2m"
+    },
+    {
+      "name": "profile-server worker PORT 1113",
+      "script": "bin/worker.js",
+      "cwd": "fxa-profile-server",
+      "max_restarts": "1",
+      "env": {
+        "NODE_ENV": "development",
+        "WORKER_HOST": "0.0.0.0",
+        "DB": "mysql"
+      },
+      "min_uptime": "2m"
+    },
+    {
+      "name": "123done PORT 8080",
+      "script": "server.js",
+      "cwd": "123done",
+      "max_restarts": "1",
+      "env": {
+        "CONFIG_123DONE": "./config-local.json",
+        "NODE_ENV": "dev"
+      },
+      "min_uptime": "2m"
+    },
+    {
+      "name": "321done UNTRUSTED PORT 10139",
+      "script": "server.js",
+      "cwd": "123done",
+      "max_restarts": "1",
+      "env": {
+        "CONFIG_123DONE": "./config-local-untrusted.json",
+        "NODE_ENV": "dev"
+      },
+      "min_uptime": "2m"
+    },
+    {
+      "name": "browserid-verifier PORT 5050",
+      "script": "server.js",
+      "cwd": "browserid-verifier",
+      "env": {
+        "PORT": "5050",
+        "IP_ADDRESS": "0.0.0.0"
+      },
+      "max_restarts": "1",
+      "min_uptime": "2m"
+    },
+    {
+      "name": "sync server PORT 5000",
+      "script": "_scripts/syncserver.sh",
+      "max_restarts": "1",
+      "min_uptime": "2m",
+      "autorestart": false
+    },
+    {
+      "name": "redis PORT 6379",
+      "script": "_scripts/redis.js",
+      "env": {
+        "PORT": "6379"
+      },
+      "max_restarts": "1",
+      "min_uptime": "2m"
+    },
+    {
+      "name": "memcached PORT 11211",
+      "script": "_scripts/memcached.js",
+      "max_restarts": "1",
+      "min_uptime": "2m"
+    },
+    {
+      "name": "Fake SQS/SNS PORT 4100",
+      "script": "_scripts/goaws.sh",
+      "max_restarts": "1",
+      "min_uptime": "2m",
+      "autorestart": false
+    }
+  ]
+}
