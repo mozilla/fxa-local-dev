@@ -168,7 +168,7 @@
     },
     {
       "name": "redis PORT 6379",
-      "script": "_scripts/redis.js",
+      "script": "_scripts/redis.sh",
       "env": {
         "PORT": "6379"
       },

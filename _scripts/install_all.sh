@@ -50,4 +50,6 @@ docker pull mozilla/syncserver
 
 docker pull pafortin/goaws
 
+docker pull redis
+
 ln -sf node_modules/.bin/pm2 pm2
