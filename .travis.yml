@@ -33,7 +33,7 @@ before_install:
 
 install:
   - PATH="`npm bin`:`npm bin -g`:$PATH"
-  - npm install -g npm@2
+  - npm install -g npm@5
   - node --version
   - npm --version
 
