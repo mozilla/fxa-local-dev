@@ -9,7 +9,4 @@ docker run --rm --name=mydb \
 -e MYSQL_ALLOW_EMPTY_PASSWORD=true \
 -e MYSQL_ROOT_HOST=% \
 -p 3306:3306 \
-mysql/mysql-server:5.6.39-1.1.3
-
-
-#-e MYSQL_DATABASE=fxa \
+mysql/mysql-server:5.6

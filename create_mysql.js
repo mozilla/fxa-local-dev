@@ -13,14 +13,14 @@ const mysql_app = {
 const authserver_mysql =
 {
   "name": "auth-server db mysql PORT 8000",
-  "script": "_scripts/auth_mysql.js",
+  "script": "_scripts/auth_mysql.sh",
   "cwd": "fxa-auth-db-mysql",
   "env": {
     "NODE_ENV": "dev"
   },
-  "max_restarts": "1",
+  "max_restarts": "2",
   "min_uptime": "2m"
-},
+};
 
 new_servers.push(mysql_app);
 new_servers.push(authserver_mysql);
