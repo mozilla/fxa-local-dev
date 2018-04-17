@@ -1,7 +1,7 @@
 {
   "apps": [
     {
-      "name": "Mysql server PORT 3306",
+      "name": "MySQL server PORT 3306",
       "script": "_scripts/mysql.sh",
       "max_restarts": "1",
       "min_uptime": "2m"
@@ -14,6 +14,17 @@
         "NODE_ENV": "dev"
       },
       "max_restarts": "2",
+      "min_uptime": "2m"
+    },
+    {
+      "name": "oauth-server-internal PORT 9011",
+      "script": "bin/internal.js",
+      "cwd": "fxa-oauth-server",
+      "env": {
+        "NODE_ENV": "dev",
+        "HOST_INTERNAL": "0.0.0.0"
+      },
+      "max_restarts": "1",
       "min_uptime": "2m"
     },
     {
@@ -69,7 +80,7 @@
     },
     {
       "name": "oauth-server PORT 9010",
-      "script": "bin/server.js",
+      "script": "_scripts/oauth_mysql.sh",
       "cwd": "fxa-oauth-server",
       "env": {
         "NODE_ENV": "dev",
@@ -80,20 +91,8 @@
       "min_uptime": "2m"
     },
     {
-      "name": "oauth-server-internal PORT 9011",
-      "script": "bin/internal.js",
-      "cwd": "fxa-oauth-server",
-      "env": {
-        "NODE_ENV": "dev",
-        "HOST_INTERNAL": "0.0.0.0",
-        "DB": "mysql"
-      },
-      "max_restarts": "1",
-      "min_uptime": "2m"
-    },
-    {
       "name": "profile-server PORT 1111",
-      "script": "bin/server.js",
+      "script": "_scripts/profile_mysql.sh",
       "cwd": "fxa-profile-server",
       "max_restarts": "1",
       "env": {
@@ -109,8 +108,7 @@
       "cwd": "fxa-profile-server",
       "max_restarts": "1",
       "env": {
-        "NODE_ENV": "development",
-        "DB": "mysql"
+        "NODE_ENV": "development"
       },
       "min_uptime": "2m"
     },
@@ -121,8 +119,7 @@
       "max_restarts": "1",
       "env": {
         "NODE_ENV": "development",
-        "WORKER_HOST": "0.0.0.0",
-        "DB": "mysql"
+        "WORKER_HOST": "0.0.0.0"
       },
       "min_uptime": "2m"
     },
