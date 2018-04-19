@@ -35,6 +35,8 @@ cd fxa-content-server; npm i --production; npm i; cp server/config/local.json-di
 
 cd fxa-auth-server; npm i; node ./scripts/gen_keys.js; node ./scripts/gen_vapid_keys.js ; cd ..
 
+cd fxa-auth-db-mysql; npm i; cd ..
+
 # Install a custom http only verifier
 cd browserid-verifier; npm i; npm i vladikoff/browserid-local-verify#http; cd ..
 
@@ -51,5 +53,7 @@ docker pull mozilla/syncserver
 docker pull pafortin/goaws
 
 docker pull redis
+
+docker pull mysql/mysql-server:5.6
 
 ln -sf node_modules/.bin/pm2 pm2
