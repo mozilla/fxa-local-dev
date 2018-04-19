@@ -29,7 +29,8 @@
         "IP_ADDRESS": "0.0.0.0",
         "SIGNIN_UNBLOCK_FORCED_EMAILS": "^block.*@restmail\\.net$",
         "SIGNIN_CONFIRMATION_ENABLED": "true",
-        "SIGNIN_CONFIRMATION_FORCE_EMAIL_REGEX": "^sync.*@restmail\\.net$"
+        "SIGNIN_CONFIRMATION_FORCE_EMAIL_REGEX": "^sync.*@restmail\\.net$",
+        "REDIRECT_DOMAIN": "127.0.0.1"
       },
       "max_restarts": "1",
       "min_uptime": "2m"
