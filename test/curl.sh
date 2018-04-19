@@ -76,8 +76,7 @@ check 127.0.0.1:9000
 check 127.0.0.1:9001 404
 
 # oauth
-#check 127.0.0.1:9010
-check 127.0.0.1:9011 404
+check 127.0.0.1:9010
 
 # 123done and 321done untrusted apps
 check 127.0.0.1:8080
@@ -92,11 +91,11 @@ check 127.0.0.1:5050 405
 # address of the endpoint have to be the same as a public_url in settings
 check localhost:5000
 
+# auth-db
+check localhost:8000
+
 # redis server
 check_redis
 
 # memcached
 check_memcached
-
-#mysql
-#check_mysql
