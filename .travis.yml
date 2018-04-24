@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "6"
+  - "8"
 
 dist: trusty
 sudo: required
@@ -38,7 +38,6 @@ install:
   - npm --version
 
 script:
-  - if [ $TRAVIS_NODE_VERSION == "4.8" ]; then export CXX=g++-4.8; fi
   - npm config set spin false
   - npm install
   - ./test/curl.sh
