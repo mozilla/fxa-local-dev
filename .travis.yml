@@ -29,6 +29,7 @@ matrix:
     - fast_finish: true
 
 before_install:
+  - npm i -g npm@5
   - if [[ $TRAVIS_OS_NAME == "osx" ]]; then brew install graphicsmagick; fi
 
 install:
