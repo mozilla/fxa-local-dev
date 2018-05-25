@@ -24,9 +24,13 @@
 
 Use the [PM2 tool](https://github.com/Unitech/PM2#main-features) to stop and start the servers, and read server logs.
 
-   The most common commands are:
+To start all servers with **mysql database**
+- `./pm2 start mysql_servers.json`
 
-   - `./pm2 start servers.json` **- start all servers.**
+To start all servers with **memory**
+- `./pm2 start servers.json`
+
+   The most common commands are:
 
    - `./pm2 kill` **- stop all servers.**
 
@@ -77,7 +81,7 @@ If you get an `error` status for any of the servers please verify that you insta
 ### Dependencies
 > Required developer dependencies:
 [Git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git),
-[node.js **6+**, with npm 3](http://nodejs.org/),
+[node.js **8+**, with npm 5](http://nodejs.org/),
 [Python 2.6+](https://www.python.org/),
 [Java 8+](https://www.java.com/en/download/),
 [Redis](http://redis.io/),
@@ -86,7 +90,7 @@ If you get an `error` status for any of the servers please verify that you insta
 [memcached](https://memcached.org/),
 [docker](https://docs.docker.com/).
 
-**Note:** Node.js 8 is not currently supported. Please use Node.js 6+.
+**Note:** Please use Node.js 8+.
 
 ##### OS X (with [Brew](http://brew.sh/)):
 
@@ -122,25 +126,25 @@ sudo service docker restart
 
 #### Installing Node.js
 
-> NOTE: If you are experienced with Node.js: Use [nvm](https://github.com/creationix/nvm) to force node 6
-just for `fxa-local-dev` using `nvm use 6`. (Install it first with `nvm install 6`)
+> NOTE: If you are experienced with Node.js: Use [nvm](https://github.com/creationix/nvm) to force node 8
+just for `fxa-local-dev` using `nvm use 8`. (Install it first with `nvm install 8`)
 
 ##### OS X
-Use this if you do not rely on other node.js programs on your system: Find the latest Node 6 LTS `.pkg` download at [nodejs.org/en/download/](https://nodejs.org/en/download/) and install it.
+Use this if you do not rely on other node.js programs on your system: Find the latest Node 8 LTS `.pkg` download at [nodejs.org/en/download/](https://nodejs.org/en/download/) and install it.
 
 ##### Ubuntu / Debian:
 
 ```
 # Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_6.x | bash -
+curl -sL https://deb.nodesource.com/setup_8.x | bash -
 apt-get install -y nodejs
 ```
 
-> NOTE: Node 6 and greater require C++11, that [does not come by default on Ubuntu 12](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+> NOTE: Node 8 and greater require C++11, that [does not come by default on Ubuntu 12](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 #### Installing Java
 
@@ -222,14 +226,9 @@ After the script you need to rebuild *firefox-ios*.
 
 > Skip this if you are not working on managing OAuth clients or working on the OAuth console.
 
-To use the [fxa-oauth-console](https://github.com/mozilla/fxa-oauth-console) to manage OAuth clients you currently need to run the fxa-oauth-server in MySQL mode (`./pm2` runs the memory database and that does not support the OAuth console at this time). First, stop the fxa-oauth-server using `./pm2` and start MySql locally. Then `cd fxa-oauth-server` and run the 2 servers:
-
+To use the [fxa-oauth-console](https://github.com/mozilla/fxa-oauth-console) to manage OAuth clients you need to run the fxa-oauth-server in MySQL mode
 ```
-NODE_ENV=dev DB=mysql node bin/server.js
-```
-and
-```
-NODE_ENV=dev DB=mysql node bin/internal.js
+./pm2 start mysql_servers.json
 ```
 
 *******
