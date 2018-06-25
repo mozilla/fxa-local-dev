@@ -98,7 +98,6 @@ xcode-select --install
 ```
 then:
 ```
-brew install gmp graphicsmagick
 sudo easy_install pip && sudo pip install virtualenv
 ```
 [Install Docker for Mac](https://docs.docker.com/docker-for-mac/install/)

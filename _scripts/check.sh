@@ -1,4 +1,6 @@
-#!/bin/bash -e
+#!/bin/sh -e
+node _scripts/check_node_version.js
+
 if [[ $(which docker) && $(docker --version) ]]; then
   docker=y
 else
@@ -14,7 +16,12 @@ if [ "$os" = "Darwin" ]; then
     fi
 
     if [[ $(which brew) && $(brew --version) ]]; then
-      brew install gmp graphicsmagick
+      brew install gmp
+      if [[ $(which gm) && $(gm -version) ]]; then
+        echo "graphicsmagick is already installed"
+      else
+        brew install graphicsmagick
+      fi
     else
       echo "install homebrew to continue installation"
       echo "https://brew.sh/"
@@ -27,8 +34,5 @@ elif [ "$os" = "Linux" ]; then
       echo "sudo groupadd docker"
       echo "sudo gpasswd -a $USER docker"
       echo "sudo service docker restart"
-    else
-      echo "install dependencies to continue:"
-      echo "sudo apt-get install build-essential git-core libgmp3-dev graphicsmagick python-virtualenv python-dev"
     fi
 fi
