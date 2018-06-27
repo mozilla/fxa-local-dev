@@ -18,7 +18,7 @@ check(
         for (const packageName of Object.keys(results.versions)) {
             if (!results.versions[packageName].isSatisfied) {
                 if(packageName === 'npm')
-                  console.error(`Npm version must be > 5.8. Run the following command to upgrade npm "npm i -g npm@5"`);
+                  console.error(`Npm version must be > 6 . Run the following command to upgrade npm "npm i -g npm@5"`);
                 else if(packageName === 'node')
                   console.error(`Node version must be > 8`);
                 else
