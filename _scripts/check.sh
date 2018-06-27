@@ -1,5 +1,11 @@
 #!/bin/sh -e
-node _scripts/check_node_version.js
+if [[ $(which node) && $(node --version) ]]; then
+  node _scripts/check_node_version.js
+else
+  echo "install node to continue installation"
+  echo "https://nodejs.org"
+  exit 1
+fi
 
 if [[ $(which docker) && $(docker --version) ]]; then
   docker=y

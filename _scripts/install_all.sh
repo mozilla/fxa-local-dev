@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/sh -ex
 _scripts/check.sh
 
 # Set ulimit, need it for npm
