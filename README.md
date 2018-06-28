@@ -124,9 +124,6 @@ sudo service docker restart
 > NOTE: If you are experienced with Node.js: Use [nvm](https://github.com/creationix/nvm) to force node 8
 just for `fxa-local-dev` using `nvm use 8`. (Install it first with `nvm install 8`)
 
-##### OS X
-Use this if you do not rely on other node.js programs on your system: Find the latest Node 8 LTS `.pkg` download at [nodejs.org/en/download/](https://nodejs.org/en/download/) and install it.
-
 ##### Ubuntu / Debian:
 
 ```
