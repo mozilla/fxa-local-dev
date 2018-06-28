@@ -22,9 +22,13 @@ if [ "$os" = "Darwin" ]; then
     fi
 
     if [[ $(which brew) && $(brew --version) ]]; then
-      brew install gmp
+      if [[ $(locate gmp) ]]; then
+        echo "gmp is installed"
+      else
+        brew install gmp
+      fi
       if [[ $(which gm) && $(gm -version) ]]; then
-        echo "graphicsmagick is already installed"
+        echo "graphicsmagick is installed"
       else
         brew install graphicsmagick
       fi

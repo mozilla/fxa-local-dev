@@ -81,14 +81,12 @@ If you get an `error` status for any of the servers please verify that you insta
 ### Dependencies
 > Required developer dependencies:
 [Git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git),
-[node.js **8+**, with npm 5](http://nodejs.org/),
+[node.js **8+** with npm 6](http://nodejs.org/),
 [Python 2.6+](https://www.python.org/),
 [Java 8+](https://www.java.com/en/download/),
 [libgmp](https://gmplib.org/),
 [graphicsmagick](http://www.graphicsmagick.org/),
 [docker](https://docs.docker.com/).
-
-**Note:** Please use Node.js 8+.
 
 ##### OS X (with [Brew](http://brew.sh/)):
 
