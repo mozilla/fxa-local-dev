@@ -25,6 +25,7 @@ check(
                     console.log("Use this if you do not rely on other node.js programs on your system: Find the latest Node 8 LTS .pkg download at nodejs.org/en/download/ and install it.")
                 else
                   console.error(`Missing ${packageName}.`);
+
                 process.exit(1);
             }
         }
