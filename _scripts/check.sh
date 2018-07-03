@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/usr/bin/env bash
 if [[ $(which node) && $(node --version) ]]; then
   node _scripts/check_node_version.js
 else
@@ -27,7 +27,7 @@ if [ "$os" = "Darwin" ]; then
       else
         brew install gmp
       fi
-      if [[ $(which gm) && $(gm -version) ]]; then
+      if [[ $(brew ls --versions graphicsmagick) ]]; then
         echo "graphicsmagick is installed"
       else
         brew install graphicsmagick
