@@ -84,10 +84,8 @@ If you get an `error` status for any of the servers please verify that you insta
 [node.js **8+**, with npm 5](http://nodejs.org/),
 [Python 2.6+](https://www.python.org/),
 [Java 8+](https://www.java.com/en/download/),
-[Redis](http://redis.io/),
 [libgmp](https://gmplib.org/),
 [graphicsmagick](http://www.graphicsmagick.org/),
-[memcached](https://memcached.org/),
 [docker](https://docs.docker.com/).
 
 **Note:** Please use Node.js 8+.
@@ -100,7 +98,7 @@ xcode-select --install
 ```
 then:
 ```
-brew install gmp redis graphicsmagick memcached
+brew install gmp graphicsmagick
 sudo easy_install pip && sudo pip install virtualenv
 ```
 [Install Docker for Mac](https://docs.docker.com/docker-for-mac/install/)

@@ -1,18 +1,15 @@
-#!/bin/bash -ex
-
-function command_exists {
-  type "$1" &> /dev/null
-}
-
-function install_memcache() {
-  echo "memcached not found, trying to install"
-  cd /tmp
-  wget http://www.memcached.org/files/memcached-1.5.7.tar.gz
-  tar -zxf memcached-1.5.7.tar.gz
-  cd memcached-1.5.7
-  ./configure && make && make test && sudo make instal
-}
-
-if ! command_exists "memcached -V"; then
-   install_memcache
+#!/bin/bash -e
+if [[ $(which docker) && $(docker --version) ]]; then
+  echo "Docker Found"
+else
+    os="$(uname -a | cut -f 1 -d ' ')"
+    if [ "$os" = "Darwin" ]; then
+      echo "Please install docker to continue installation"
+      exit 1
+    elif [ "$os" = "Linux" ]; then
+      sudo apt-get install docker-ce
+      sudo groupadd docker
+      sudo gpasswd -a $USER docker
+      sudo service docker restart
+    fi
 fi
