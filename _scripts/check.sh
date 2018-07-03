@@ -22,7 +22,7 @@ if [ "$os" = "Darwin" ]; then
     fi
 
     if [[ $(which brew) && $(brew --version) ]]; then
-      if [[ $(locate gmp) ]]; then
+      if [[ $(brew ls --versions gmp) ]]; then
         echo "gmp is installed"
       else
         brew install gmp
