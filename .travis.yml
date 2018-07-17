@@ -42,9 +42,9 @@ install:
 script:
   - npm config set spin false
   - npm install
+  - docker --version
   - ./test/curl.sh
   - ./pm2 logs 13
-  - docker --version
   - pm2 kill
   - pm2 start mysql_servers.json
   - ./test/mysql.sh
