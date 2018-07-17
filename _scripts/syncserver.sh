@@ -3,6 +3,8 @@
 docker run --rm --name syncserver \
   -p 5000:5000 \
   -e SYNCSERVER_PUBLIC_URL=http://localhost:5000 \
+  -e SYNCSERVER_IDENTITY_PROVIDER=http://host.docker.internal:3030 \
+  -e SYNCSERVER_BROWSERID_VERIFIER=http://host.docker.internal:5050 \
   -e SYNCSERVER_SECRET=5up3rS3kr1t \
   -e SYNCSERVER_SQLURI=sqlite:////tmp/syncserver.db \
   -e SYNCSERVER_BATCH_UPLOAD_ENABLED=true \
