@@ -1,7 +1,5 @@
 #!/bin/sh -ex
 
-sleep 20
-
 docker run --rm --name syncserver \
   -p 5000:5000 \
   -e SYNCSERVER_PUBLIC_URL=http://localhost:5000 \
