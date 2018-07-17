@@ -65,7 +65,8 @@
       "cwd": "fxa-oauth-server",
       "env": {
         "NODE_ENV": "dev",
-        "HOST" : "0.0.0.0"
+        "HOST" : "0.0.0.0",
+        "FXA_OPENID_ISSUER": "http://127.0.0.1:3030"
       },
       "max_restarts": "1",
       "min_uptime": "2m"
