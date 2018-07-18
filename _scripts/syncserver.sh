@@ -8,6 +8,8 @@ else
   HOST_ADDR='127.0.0.1'
 fi
 
+sleep 20;
+
 docker run --net=host --rm --name syncserver \
   -p 5000:5000 \
   -e SYNCSERVER_PUBLIC_URL=http://localhost:5000 \
