@@ -18,7 +18,7 @@ git clone https://github.com/mozilla/fxa-email-service.git &
 
 git clone https://github.com/mozilla/fxa-customs-server.git &
 
-git clone https://github.com/vladikoff/browserid-verifier.git -b http &
+git clone https://github.com/mozilla/browserid-verifier.git &
 
 git clone https://github.com/mozilla/fxa-oauth-server.git &
 git clone https://github.com/mozilla/fxa-oauth-console.git &
@@ -41,8 +41,7 @@ cd fxa-auth-db-mysql; npm i; cd ..
 
 cd fxa-email-service; rustup override set nightly; cargo build --bin fxa_email_send; cd ..
 
-# Install a custom http only verifier
-cd browserid-verifier; npm i; npm i vladikoff/browserid-local-verify#http; cd ..
+cd browserid-verifier; npm i; cd ..
 
 cd fxa-oauth-server; npm i; cd ..
 
