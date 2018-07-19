@@ -40,7 +40,7 @@ install:
   - npm --version
   - curl -sSf https://sh.rustup.rs | sh -s -- -y --verbose
   - PATH=$PATH:$HOME/.cargo/bin
-  - rustup install nightly
+  - rustup install nightly-2018-06-23
   - rustc --version
 
 cache:
