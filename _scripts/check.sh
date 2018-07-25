@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -ex
 if [[ ! $(which rustup) ]]; then
   curl https://sh.rustup.rs -sSf | sh
   export PATH=$PATH:$HOME/.cargo/bin/
