@@ -9,24 +9,24 @@ ulimit -S -n 2048 || echo "Setting ulimit failed"
 git clone https://github.com/mozilla/fxa-content-server.git &
 git clone https://github.com/mozilla/fxa-content-server-l10n.git &
 
-git clone https://github.com/mozilla/fxa-js-client.git &
+#git clone https://github.com/mozilla/fxa-js-client.git &
 
 git clone https://github.com/mozilla/fxa-auth-server.git &
 git clone https://github.com/mozilla/fxa-auth-db-mysql.git &
 
-git clone https://github.com/mozilla/fxa-email-service.git &
+#git clone https://github.com/mozilla/fxa-email-service.git &
 
-git clone https://github.com/mozilla/fxa-customs-server.git &
+#git clone https://github.com/mozilla/fxa-customs-server.git &
 
-git clone https://github.com/mozilla/browserid-verifier.git &
+#git clone https://github.com/mozilla/browserid-verifier.git &
 
-git clone https://github.com/mozilla/fxa-oauth-console.git &
+#git clone https://github.com/mozilla/fxa-oauth-console.git &
 
-git clone https://github.com/mozilla/fxa-profile-server.git &
+#git clone https://github.com/mozilla/fxa-profile-server.git &
 
-git clone https://github.com/mozilla/fxa-basket-proxy.git &
+#git clone https://github.com/mozilla/fxa-basket-proxy.git &
 
-git clone https://github.com/mozilla/123done.git -b oauth &
+#git clone https://github.com/mozilla/123done.git -b oauth &
 
 wait
 
@@ -40,32 +40,32 @@ cd fxa-auth-db-mysql; npm i; cd ..
 
 cd fxa-auth-server; npm link ../fxa-auth-db-mysql; cd ..
 
-cd fxa-email-service; rustup override set nightly-2018-08-06; cargo build --bin fxa_email_send; cd ..
+#cd fxa-email-service; rustup override set nightly-2018-08-06; cargo build --bin fxa_email_send; cd ..
 
-cd browserid-verifier; npm i; cd ..
+#cd browserid-verifier; npm i; cd ..
 
-cd fxa-auth-server/fxa-oauth-server; npm i; cd ../..
+#cd fxa-auth-server/fxa-oauth-server; npm i; cd ../..
 
-cd fxa-profile-server; npm i; mkdir -p var/public/; cd ..
+#cd fxa-profile-server; npm i; mkdir -p var/public/; cd ..
 
-cd fxa-basket-proxy; npm i; cd ..
+#cd fxa-basket-proxy; npm i; cd ..
 
-cd 123done; npm i; cd ..
+#cd 123done; npm i; cd ..
 
 docker network create fxa-net || true
 
 docker pull memcached
 
-docker pull mozilla/syncserver
+#docker pull mozilla/syncserver
 
-docker pull mozilla/pushbox
+#docker pull mozilla/pushbox
 
 docker pull pafortin/goaws
 
 docker pull redis
 
-docker pull mysql/mysql-server:5.6
+#docker pull mysql/mysql-server:5.6
 
-docker pull mozilla/channelserver
+#docker pull mozilla/channelserver
 
 ln -sf node_modules/.bin/pm2 pm2
