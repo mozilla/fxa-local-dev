@@ -5,7 +5,7 @@
 git pull https://github.com/mozilla/fxa-local-dev.git master
 
 (cd fxa-content-server && git checkout -- . && git checkout master && git pull origin master && npm i && cd ..) || echo "fxa-content-server update failed"
-(cd fxa-auth-server && git checkout -- . && git checkout master && git pull origin master && npm i && cd ..) || echo "fxa-auth-server update failed"
+(cd fxa-auth-server && git checkout -- . && git checkout firefox-special-event && git pull origin master && npm i && cd ..) || echo "fxa-auth-server update failed"
 
 (cd fxa-auth-db-mysql && git checkout -- . && git checkout master && git pull origin master && npm i && cd ..) || echo "fxa-auth-db-mysql update failed"
 
