@@ -44,8 +44,6 @@ cd fxa-email-service; cargo build --bin fxa_email_send; cd ..
 
 cd browserid-verifier; npm i; cd ..
 
-cd fxa-auth-server/fxa-oauth-server; npm i; cd ../..
-
 cd fxa-profile-server; npm i; mkdir -p var/public/; cd ..
 
 cd fxa-basket-proxy; npm i; cd ..
